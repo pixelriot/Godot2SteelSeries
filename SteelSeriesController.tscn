@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://SteelSeriesController.gd" type="Script" id=1]
+
+[node name="SteelSeriesController" type="Node"]
+script = ExtResource( 1 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Heartbeat" type="Timer" parent="."]
+
+[node name="BitmapTimer" type="Timer" parent="."]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="timeout" from="Heartbeat" to="." method="_on_Heartbeat_timeout"]

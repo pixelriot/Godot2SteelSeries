@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://SteelSeriesController.tscn" type="PackedScene" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 194.0
+margin_bottom = 44.0
+focus_mode = 0
+mouse_filter = 2
+button_mask = 0
+enabled_focus_mode = 0
+text = "Steel Series connected"
+
+[node name="Bitmap Upgrade" type="Button" parent="."]
+margin_left = 30.0
+margin_top = 70.0
+margin_right = 260.0
+margin_bottom = 100.0
+text = "Bitmap UPGRADE"
+
+[node name="Bitmap Reset" type="Button" parent="."]
+margin_left = 30.0
+margin_top = 110.0
+margin_right = 260.0
+margin_bottom = 140.0
+text = "Bitmap RESET"
+
+[node name="HealthSlider" type="HSlider" parent="."]
+editor/display_folded = true
+margin_left = 100.0
+margin_top = 170.0
+margin_right = 260.0
+margin_bottom = 190.0
+value = 100.0
+rounded = true
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="HealthSlider"]
+margin_left = -70.0
+margin_right = -8.0
+margin_bottom = 20.0
+text = "Health"
+valign = 1
+
+[node name="FlashColor" type="HSlider" parent="."]
+editor/display_folded = true
+margin_left = 100.0
+margin_top = 210.0
+margin_right = 260.0
+margin_bottom = 230.0
+max_value = 18.0
+step = 2.0
+rounded = true
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="FlashColor"]
+margin_left = -70.0
+margin_right = -8.0
+margin_bottom = 20.0
+text = "Flash"
+valign = 1
+
+[node name="DeathCount" type="SpinBox" parent="."]
+margin_left = 30.0
+margin_top = 260.0
+margin_right = 260.0
+margin_bottom = 284.0
+rounded = true
+allow_greater = true
+prefix = "Death count"
+
+[node name="KillCount" type="SpinBox" parent="."]
+margin_left = 30.0
+margin_top = 300.0
+margin_right = 260.0
+margin_bottom = 324.0
+rounded = true
+allow_greater = true
+prefix = "Kill count"
+
+[node name="SteelSeriesController" parent="." instance=ExtResource( 2 )]
+[connection signal="pressed" from="Bitmap Upgrade" to="." method="_on_Bitmap_Upgrade_pressed"]
+[connection signal="pressed" from="Bitmap Reset" to="." method="_on_Bitmap_Reset_pressed"]
+[connection signal="value_changed" from="HealthSlider" to="." method="_on_HealthSlider_value_changed"]
+[connection signal="value_changed" from="FlashColor" to="." method="_on_FlashColor_value_changed"]
+[connection signal="value_changed" from="DeathCount" to="." method="_on_DeathCount_value_changed"]
+[connection signal="value_changed" from="KillCount" to="." method="_on_KillCount_value_changed"]
