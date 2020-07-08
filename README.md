@@ -6,7 +6,7 @@ High level interface for calling Steel Series events from Godot
 ## Testing the app
 
 * Download and import the Godot2SteelSeries-project as a new Godot-project.
-* Run the project. If your SteelSeries engine is running and Godot connects succesfully, the checkbox *Steel Series connected* should be active. 
+* Run the project. If your SteelSeries engine is running and Godot connects successfully, the checkbox *Steel Series connected* should be active. 
 * Click on the controls. It should change some colors on your Steel Series periphery.
 
 ![ui](https://user-images.githubusercontent.com/21098503/84658424-2dc13700-af16-11ea-908c-68dbe5bba7d0.png)
@@ -25,10 +25,10 @@ Feel free to change the effect definitions in ```func register_events()``` and m
 Also feel free to share your own effect creations with us :)
 
 ```steelseries.trigger_bitmap_event("UPGRADE")```   
-A red and blue color effect will iluminate your full keyboard.
+A red and blue color effect will illuminate your full keyboard.
 
 ```steelseries.trigger_bitmap_event("RESET")```   
-A white color effect will iluminate your full keyboard.
+A white color effect will illuminate your full keyboard.
 	
 ```steelseries.trigger_event("HEALTH", value)```   
 *value* needs to be between 0 and 100.  
